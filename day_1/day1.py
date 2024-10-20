@@ -13,12 +13,13 @@ for row in file.readlines():
 count_depths = 0
 
 # loop through list except last element
-for i in range(len(rows) - 1):
+for i in range(len(rows) - 3):
 
-    # check if the next element is greater than the current & add to count if so
-    if rows[i + 1] > rows[i]:
+    # sliding window of 3
+    if (rows[i+1] + rows[i+2] + rows[i+3]) > (rows[i] + rows[i+1] + rows[i+2]):
         count_depths+=1
 
 print(f"The depth increases {count_depths} times.")
 
-# solution was 1581
+# part 1 solution; 1581
+# part 2 solution: 1618
